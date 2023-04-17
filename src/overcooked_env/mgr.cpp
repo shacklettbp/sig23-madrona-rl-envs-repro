@@ -183,7 +183,7 @@ Manager::Impl * Manager::Impl::init(const Config &cfg)
     }
 
     // Increase this number before exporting more tensors
-    uint32_t num_exported_buffers = 10;
+    uint32_t num_exported_buffers = 8;
 
     if (cfg.execMode == ExecMode::CPU) {
         return new CPUImpl(cfg, app_cfg, episode_mgr, world_inits.data(),
@@ -249,25 +249,25 @@ MADRONA_EXPORT Tensor Manager::rewardTensor() const
 
 MADRONA_EXPORT Tensor Manager::worldIDTensor() const
 {
-    return impl_->exportTensor(6, Tensor::ElementType::Int32,
+    return impl_->exportTensor(5, Tensor::ElementType::Int32,
         {impl_->cfg.num_players, impl_->cfg.numWorlds});
 }
 
 MADRONA_EXPORT Tensor Manager::agentIDTensor() const
 {
-    return impl_->exportTensor(7, Tensor::ElementType::Int32,
+    return impl_->exportTensor(6, Tensor::ElementType::Int32,
         {impl_->cfg.num_players, impl_->cfg.numWorlds});
 }
 
 MADRONA_EXPORT Tensor Manager::locationWorldIDTensor() const
 {
-    return impl_->exportTensor(8, Tensor::ElementType::Int32,
+    return impl_->exportTensor(7, Tensor::ElementType::Int32,
         {impl_->cfg.num_players * impl_->cfg.width * impl_->cfg.height, impl_->cfg.numWorlds});
 }
 
 MADRONA_EXPORT Tensor Manager::locationIDTensor() const
 {
-    return impl_->exportTensor(9, Tensor::ElementType::Int32,
+    return impl_->exportTensor(7, Tensor::ElementType::Int32,
         {impl_->cfg.num_players * impl_->cfg.width * impl_->cfg.height, impl_->cfg.numWorlds});
 }
 

@@ -48,12 +48,10 @@ namespace Overcooked {
         registry.exportColumn<Agent, Action>(2);
         registry.exportColumn<Agent, ActionMask>(4);
         registry.exportColumn<Agent, Reward>(5);
-        registry.exportColumn<Agent, WorldID>(6);
-        registry.exportColumn<Agent, AgentID>(7);
+        registry.exportColumn<Agent, AgentID>(6);
 
         registry.exportColumn<LocationXPlayer, LocationXObservation>(3);
-        registry.exportColumn<LocationXPlayer, WorldID>(8);
-        registry.exportColumn<LocationXPlayer, LocationXID>(9);
+        registry.exportColumn<LocationXPlayer, LocationXID>(7);
     }
 
     inline int32_t get_time(WorldState &ws, Object &soup)

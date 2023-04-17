@@ -37,9 +37,8 @@ void Sim::registerTypes(ECSRegistry &registry, const Config &cfg)
     registry.exportColumn<Agent, Observation>(3);
     registry.exportColumn<Agent, ActionMask>(4);
     registry.exportColumn<Agent, Reward>(5);
-    registry.exportColumn<Agent, WorldID>(6);
-    registry.exportColumn<Agent, AgentID>(7);
-    registry.exportColumn<Agent, State>(8);
+    registry.exportColumn<Agent, AgentID>(6);
+    registry.exportColumn<Agent, State>(7);
 }
 
     inline uint8_t drawDeck(Engine &ctx, Deck &deck)

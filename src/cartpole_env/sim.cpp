@@ -42,7 +42,7 @@ namespace Cartpole {
     registry.exportColumn<Agent, Action>(1);
     registry.exportColumn<Agent, State>(2);
     registry.exportColumn<Agent, Reward>(3);
-    registry.exportColumn<Agent, WorldID>(4);
+    //registry.exportColumn<Agent, WorldID>(4);
 }
 
 static void resetWorld(Engine &ctx)

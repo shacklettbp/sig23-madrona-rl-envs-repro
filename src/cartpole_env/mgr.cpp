@@ -155,7 +155,7 @@ Manager::Impl * Manager::Impl::init(const Config &cfg)
         };
     }
 
-    uint32_t num_exported_buffers = 5;
+    uint32_t num_exported_buffers = 4;
 
 
     if (cfg.execMode == ExecMode::CPU) {
@@ -209,7 +209,7 @@ MADRONA_EXPORT Tensor Manager::rewardTensor() const
 
 MADRONA_EXPORT Tensor Manager::worldIDTensor() const
 {
-    return impl_->exportTensor(4, Tensor::ElementType::Int32,
+    return impl_->exportTensor(3, Tensor::ElementType::Int32,
                                {impl_->cfg.numWorlds, 1});
 }
 
